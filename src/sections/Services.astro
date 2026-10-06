@@ -1,0 +1,20 @@
+---
+import SectionTitle from "../components/SectionTitle.astro";
+import ServiceCard from "../components/ServiceCard.astro";
+import { services } from "../data/services";
+---
+
+<section id="servicios" class="bg-noche-900/40 py-24">
+  <div class="mx-auto max-w-6xl px-6">
+    <SectionTitle
+      eyebrow="Servicios"
+      title="Todo lo que un evento necesita"
+      description="Desde la gran boda hasta el banquete corporativo, nuestros servicios se integran como una sola experiencia."
+    />
+    <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      {services.map((service) => (
+        <ServiceCard title={service.title} description={service.description} image={service.image} />
+      ))}
+    </div>
+  </div>
+</section>

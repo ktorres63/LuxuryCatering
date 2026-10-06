@@ -1,0 +1,43 @@
+---
+import MobileMenu from "./MobileMenu.astro";
+import { navItems, site } from "../data/site";
+import logoUrl from "../assets/images/hero/LogoLuxury.png?url";
+---
+
+<header id="site-header" class="fixed inset-x-0 top-0 z-40 transition-colors duration-300">
+  <nav class="font-semibold flex justify-between md:justify-around px-6 py-4 md:py-4 " aria-label="Principal">
+    <a href="#inicio" aria-label={site.name}>
+      <img src={logoUrl} alt={site.name} class="h-12 w-auto md:h-20" />
+    </a>
+
+    <ul class="hidden items-center gap-6 md:flex">
+      {
+        navItems.map((item) => (
+          <li>
+            <a
+              href={item.href}
+              class="text-base text-marfil/80 transition-colors hover:text-champagne-400 md:text-lg"
+            >
+              {item.label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+
+    <MobileMenu />
+  </nav>
+</header>
+
+<script>
+  const header = document.getElementById("site-header");
+
+  const onScroll = () => {
+    const solid = window.scrollY > 8;
+    header?.classList.toggle("bg-noche-900/80", solid);
+    header?.classList.toggle("backdrop-blur-md", solid);
+  };
+
+  onScroll();
+  window.addEventListener("scroll", onScroll, { passive: true });
+</script>

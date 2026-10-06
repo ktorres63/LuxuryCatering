@@ -1,0 +1,20 @@
+---
+import SectionTitle from "../components/SectionTitle.astro";
+import TestimonialCard from "../components/TestimonialCard.astro";
+import { testimonials } from "../data/testimonials";
+---
+
+<section id="testimonios" class="bg-noche-900/40 py-24">
+  <div class="mx-auto max-w-6xl px-6">
+    <SectionTitle
+      eyebrow="Testimonios"
+      title="Lo que dicen nuestros clientes"
+      description="Historias reales de celebraciones que recuerdan siempre."
+    />
+    <div class="grid gap-8 md:grid-cols-3">
+      {testimonials.map((t) => (
+        <TestimonialCard quote={t.quote} name={t.name} event={t.event} />
+      ))}
+    </div>
+  </div>
+</section>

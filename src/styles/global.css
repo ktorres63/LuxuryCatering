@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+@theme {
+  --color-noche-950: #070b16;
+  --color-noche-900: #0e1526;
+  --color-noche-800: #17203a;
+  --color-noche-700: #212c4a;
+
+  --color-marfil: #faf7f2;
+  --color-crema: #f3ede3;
+  --color-beige: #e7dccb;
+
+  --color-champagne-300: #ebddbb;
+  --color-champagne-400: #dcc48c;
+  --color-champagne-500: #c9a86a;
+  --color-champagne-600: #b08d4f;
+
+  --font-serif: "Cormorant Garamond", ui-serif, Georgia, serif;
+  --font-sans: "Jost", ui-sans-serif, system-ui, sans-serif;
+
+  --animate-fade-up: fade-up 0.7s ease-out both;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-noche-950 text-marfil font-sans antialiased;
+}
+
+h1, h2, h3, h4 {
+  @apply font-serif;
+}
+
+::selection {
+  background: var(--color-champagne-500);
+  color: var(--color-noche-950);
+}
+
+section {
+  scroll-margin-top: 80px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

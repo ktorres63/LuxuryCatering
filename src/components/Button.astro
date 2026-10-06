@@ -1,0 +1,46 @@
+---
+interface Props {
+  href?: string;
+  type?: "button" | "submit";
+  variant?: "primary" | "secondary" | "ghost";
+  target?: string;
+  class?: string;
+  ariaLabel?: string;
+}
+
+const {
+  href,
+  type = "button",
+  variant = "primary",
+  target,
+  class: className = "",
+  ariaLabel,
+} = Astro.props;
+
+const base =
+  "inline-flex items-center justify-center rounded-full px-8 py-3 text-xs font-semibold uppercase tracking-[0.2em] transition-colors duration-300 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-champagne-400 disabled:opacity-50";
+
+const variants = {
+  primary: "bg-champagne-500 text-noche-950 hover:bg-champagne-400",
+  secondary: "border border-marfil/40 text-marfil hover:border-champagne-400 hover:text-champagne-400",
+  ghost: "text-marfil/80 hover:text-champagne-400",
+};
+
+const rel = target === "_blank" ? "noopener noreferrer" : undefined;
+---
+
+{href ? (
+  <a
+    href={href}
+    target={target}
+    rel={rel}
+    aria-label={ariaLabel}
+    class:list={[base, variants[variant], className]}
+  >
+    <slot />
+  </a>
+) : (
+  <button type={type} aria-label={ariaLabel} class:list={[base, variants[variant], className]}>
+    <slot />
+  </button>
+)}

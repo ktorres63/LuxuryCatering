@@ -1,0 +1,77 @@
+---
+import { navItems } from "../data/site";
+---
+
+<div class="md:hidden">
+  <button
+    id="mobile-menu-button"
+    type="button"
+    aria-expanded="false"
+    aria-controls="mobile-menu"
+    aria-label="Abrir menú"
+    class="inline-flex items-center justify-center rounded-full p-2 text-marfil transition-colors hover:text-champagne-400 focus-visible:outline-2 focus-visible:outline-champagne-400"
+  >
+    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </button>
+
+  <nav
+    id="mobile-menu"
+    class="fixed inset-0 z-50 hidden bg-noche-950/95 backdrop-blur-sm"
+    aria-label="Menú principal"
+  >
+    <button
+      id="mobile-menu-close"
+      type="button"
+      aria-label="Cerrar menú"
+      class="absolute right-6 top-6 inline-flex items-center justify-center rounded-full p-2 text-marfil transition-colors hover:text-champagne-400 focus-visible:outline-2 focus-visible:outline-champagne-400"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+
+    <ul class="flex h-full flex-col items-center justify-center gap-8">
+      {
+        navItems.map((item) => (
+          <li>
+            <a
+              href={item.href}
+              class="font-serif text-3xl text-marfil transition-colors hover:text-champagne-400"
+            >
+              {item.label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+</div>
+
+<script>
+  const button = document.getElementById("mobile-menu-button");
+  const close = document.getElementById("mobile-menu-close");
+  const panel = document.getElementById("mobile-menu");
+
+  const open = () => {
+    panel?.classList.remove("hidden");
+    button?.setAttribute("aria-expanded", "true");
+    close?.focus();
+  };
+
+  const hide = () => {
+    panel?.classList.add("hidden");
+    button?.setAttribute("aria-expanded", "false");
+  };
+
+  button?.addEventListener("click", open);
+  close?.addEventListener("click", hide);
+  panel?.querySelectorAll("a").forEach((a) => a.addEventListener("click", hide));
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") hide();
+  });
+</script>

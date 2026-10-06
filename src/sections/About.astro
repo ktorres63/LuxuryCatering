@@ -1,0 +1,18 @@
+---
+import SectionTitle from "../components/SectionTitle.astro";
+import teamImg from "../assets/images/team/team.svg?url";
+---
+
+<section id="nosotros" class="py-24">
+  <div class="mx-auto grid max-w-6xl items-center gap-12 px-6 md:grid-cols-2">
+    <div>
+      <SectionTitle
+        align="left"
+        eyebrow="Nosotros"
+        title="Detalles que hacen historia"
+        description="En Luxury Catering y Eventos nos dedicamos a organizar celebraciones con el mismo esmero que sus protagonistas. Desde el catering hasta la ambientación, cada pieza del evento se cuida para que el resultado se sienta único y cálido."
+      />
+    </div>
+    <img src={teamImg} alt="Equipo de Luxury Catering y Eventos en plena preparación" class="w-full rounded-2xl object-cover" loading="lazy" />
+  </div>
+</section>

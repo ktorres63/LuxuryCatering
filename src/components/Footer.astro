@@ -1,0 +1,41 @@
+---
+import { navItems, site } from "../data/site";
+
+const year = new Date().getFullYear();
+---
+
+<footer class="border-t border-white/5 bg-noche-900/70 py-12">
+  <div class="mx-auto grid max-w-6xl gap-10 px-6 sm:grid-cols-2 md:grid-cols-3">
+    <div>
+      <p class="font-serif text-lg text-marfil">{site.name}</p>
+      <p class="mt-2 font-serif text-sm italic text-champagne-400">{site.slogan}</p>
+    </div>
+
+    <nav aria-label="Pie de página">
+      <p class="text-xs font-semibold uppercase tracking-[0.3em] text-champagne-500">Navegación</p>
+      <ul class="mt-4 flex flex-col gap-2">
+        {navItems.map((item) => (
+          <li>
+            <a href={item.href} class="text-sm text-marfil/70 transition-colors hover:text-champagne-400">
+              {item.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+
+    <div>
+      <p class="text-xs font-semibold uppercase tracking-[0.3em] text-champagne-500">Contacto</p>
+      <ul class="mt-4 flex flex-col gap-2 text-sm text-marfil/70">
+        <li>{site.phone}</li>
+        <li>{site.email}</li>
+        <li>{site.instagram}</li>
+        <li>{site.location}</li>
+      </ul>
+    </div>
+  </div>
+
+  <p class="mx-auto mt-10 max-w-6xl px-6 text-xs text-marfil/40">
+    © {year} {site.name}. Todos los derechos reservados.
+  </p>
+</footer>

@@ -1,0 +1,20 @@
+---
+import SectionTitle from "../components/SectionTitle.astro";
+import EventCard from "../components/EventCard.astro";
+import { events } from "../data/events";
+---
+
+<section id="eventos" class="py-24">
+  <div class="mx-auto max-w-6xl px-6">
+    <SectionTitle
+      eyebrow="Eventos"
+      title="Celebraciones para cada historia"
+      description="Acompañamos cada tipo de celebración con el mismo compromiso por la excelencia."
+    />
+    <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      {events.map((event) => (
+        <EventCard title={event.title} description={event.description} image={event.image} />
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,23 @@
+---
+import Button from "../components/Button.astro";
+import { whatsappUrl } from "../data/site";
+---
+
+<section class="border-y border-champagne-500/20 bg-noche-900 py-20">
+  <div class="mx-auto max-w-3xl px-6 text-center">
+    <h2 class="text-3xl text-marfil sm:text-4xl">¿Listos para comenzar?</h2>
+    <p class="mt-4 text-marfil/70">
+      Agenda tu cotización y juntos diseñamos el evento de tus sueños.
+    </p>
+    <div class="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
+      <Button href="#contacto" variant="primary">Agendar cotización</Button>
+      <Button
+        href={whatsappUrl("Hola, quiero agendar una cotización para mi evento.")}
+        target="_blank"
+        variant="secondary"
+      >
+        Escríbenos por WhatsApp
+      </Button>
+    </div>
+  </div>
+</section>

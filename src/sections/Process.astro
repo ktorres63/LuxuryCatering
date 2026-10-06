@@ -1,0 +1,23 @@
+---
+import SectionTitle from "../components/SectionTitle.astro";
+import { process } from "../data/process";
+---
+
+<section id="proceso" class="bg-noche-900/40 py-24">
+  <div class="mx-auto max-w-6xl px-6">
+    <SectionTitle
+      eyebrow="Proceso"
+      title="Cómo trabajamos"
+      description="Un acompañamiento cercano, del primer contacto al último brindis."
+    />
+    <ol class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+      {process.map((step) => (
+        <li class="rounded-2xl bg-noche-800/60 p-6 ring-1 ring-white/5">
+          <span class="font-serif text-4xl text-champagne-500">{step.step}</span>
+          <h3 class="mt-4 text-xl text-marfil">{step.title}</h3>
+          <p class="mt-2 text-sm text-marfil/70">{step.description}</p>
+        </li>
+      ))}
+    </ol>
+  </div>
+</section>

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080" role="img" aria-label="Salón elegante preparado para un evento">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1B2744"/>
+      <stop offset="1" stop-color="#070B16"/>
+    </linearGradient>
+  </defs>
+  <rect width="1920" height="1080" fill="url(#bg)"/>
+  <rect x="70" y="70" width="1780" height="940" fill="none" stroke="#C9A86A" stroke-opacity="0.35" stroke-width="2"/>
+  <text x="960" y="545" fill="#C9A86A" fill-opacity="0.75" font-family="Georgia, 'Times New Roman', serif" font-size="44" text-anchor="middle">Foto del equipo — reemplazar placeholder</text>
+</svg>

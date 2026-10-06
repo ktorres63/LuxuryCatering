@@ -1,0 +1,16 @@
+---
+interface Props {
+  quote: string;
+  name: string;
+  event: string;
+}
+
+const { quote, name, event } = Astro.props;
+---
+
+<figure class="rounded-2xl bg-crema p-8 ring-1 ring-champagne-500/30">
+  <blockquote class="text-base italic text-noche-900">"{quote}"</blockquote>
+  <figcaption class="mt-6 text-sm font-semibold uppercase tracking-[0.2em] text-champagne-600">
+    {name} <span class="text-noche-900/60">· {event}</span>
+  </figcaption>
+</figure>
