@@ -3,26 +3,37 @@ import Button from "../components/Button.astro";
 import heroUrl from "../assets/images/hero/a33a8204-7e26-48b3-b6b9-f9cb86ac8e05.jpeg?url";
 ---
 
-<section id="inicio" class="relative flex min-h-screen items-center justify-center overflow-hidden">
+<section
+  id="inicio"
+  class="relative flex min-h-screen items-center justify-center overflow-hidden"
+>
   <img
     src={heroUrl}
     alt="Salón elegante con mesa larga decorada con flores blancas"
     class="absolute inset-0 h-full w-full object-cover"
   />
-  <div class="absolute inset-0 bg-linear-to-b from-noche-950/50 via-noche-950/60 to-noche-950"></div>
+  <div
+    class="absolute inset-0 bg-linear-to-b from-noche-950/50 via-noche-950/60 to-noche-950"
+  >
+  </div>
 
   <div class="relative z-10 mx-auto max-w-3xl px-6 text-center">
-    <p class="mb-4 text-xs font-semibold uppercase tracking-[0.4em] text-champagne-400">
-      Luxury Catering y Eventos
-    </p>
-    <h1 class="text-4xl text-marfil sm:text-5xl md:text-6xl">
-      Transformamos tus momentos especiales en recuerdos inolvidables.
+    <h1 class="text-4xl text-marfil sm:text-5xl md:text-6xl font-bold">
+      Transformamos tus momentos especiales en <span class="text-champagne-400 italic">recuerdos inolvidables. </span>
     </h1>
-    <p class="mt-6 font-serif text-xl italic text-champagne-400">“Magia en cada detalle.”</p>
+    <p class="mt-6 font-serif text-xl text-marfil/80 sm:text-2xl md:text-3xl">
+      Nos encargamos de cada detalle: desde la planificación y decoración
+      temática hasta la alta cocina y el servicio de protocolo. Tú solo disfruta
+      y crea hermosos recuerdos; del resto nos encargamos nosotros.
+    </p>
 
-    <div class="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+    <div
+      class="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row"
+    >
       <Button href="#contacto" variant="primary">Agendar cotización</Button>
-      <Button href="#servicios" variant="secondary">Ver nuestros servicios</Button>
+      <Button href="#servicios" variant="secondary"
+        >Ver nuestros servicios</Button
+      >
     </div>
   </div>
 </section>

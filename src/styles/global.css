@@ -15,8 +15,8 @@
   --color-champagne-500: #c9a86a;
   --color-champagne-600: #b08d4f;
 
-  --font-serif: "Cormorant Garamond", ui-serif, Georgia, serif;
-  --font-sans: "Jost", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", ui-serif, Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
 
   --animate-fade-up: fade-up 0.7s ease-out both;
 }
