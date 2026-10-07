@@ -1,0 +1,37 @@
+---
+import {
+  MessageCircle,
+  ClipboardList,
+  Palette,
+  Sparkles,
+  type Icon,
+} from "@lucide/astro";
+
+interface Props {
+  step: number;
+  title: string;
+  description: string;
+  label?: string;
+}
+
+const { step, title, description, label = "Paso inicial" } = Astro.props;
+
+const icons: Icon[] = [MessageCircle, ClipboardList, Palette, Sparkles];
+const Icon = icons[(step - 1) % icons.length];
+---
+
+<article class="flex h-full flex-col rounded-2xl bg-noche-950/90 p-6 ring-1 ring-white/10 transition duration-300 hover:ring-champagne-500/40">
+  <div class="flex items-start justify-between">
+    <span class="text-sm font-semibold tracking-[0.2em] text-champagne-400">
+      {String(step).padStart(2, "0")}
+    </span>
+    <Icon size={22} strokeWidth={1.5} class="text-marfil/40" aria-hidden="true" />
+  </div>
+
+  <h3 class="mt-6 text-2xl text-marfil">{title}</h3>
+  <p class="mt-3 flex-1 text-sm leading-relaxed text-marfil/70">{description}</p>
+
+  <p class="mt-8 text-[11px] font-semibold uppercase tracking-[0.25em] text-champagne-400">
+    {label}
+  </p>
+</article>

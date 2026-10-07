@@ -1,23 +1,59 @@
 ---
-import Button from "../components/Button.astro";
-import { whatsappUrl } from "../data/site";
+const stats = [
+  { value: "11", label: "Servicios integrales para cada ocasión" },
+  { value: "100%", label: "Atención personalizada en cada evento" },
+  { value: "+8", label: "Tipos de celebración que celebramos" },
+];
 ---
 
-<section class="border-y border-champagne-500/20 bg-noche-900 py-20">
-  <div class="mx-auto max-w-3xl px-6 text-center">
-    <h2 class="text-3xl text-marfil sm:text-4xl">¿Listos para comenzar?</h2>
-    <p class="mt-4 text-marfil/70">
-      Agenda tu cotización y juntos diseñamos el evento de tus sueños.
-    </p>
-    <div class="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-      <Button href="#contacto" variant="primary">Agendar cotización</Button>
-      <Button
-        href={whatsappUrl("Hola, quiero agendar una cotización para mi evento.")}
-        target="_blank"
-        variant="secondary"
-      >
-        Escríbenos por WhatsApp
-      </Button>
+<section class="px-6 py-20">
+  <div class="mx-auto max-w-6xl overflow-hidden rounded-3xl p-8 sm:p-12">
+    <div class="grid items-start gap-12 md:grid-cols-5">
+      <div class="md:col-span-3">
+        <h2 class="text-3xl leading-tight text-marfil sm:text-4xl">
+          Creamos experiencias para <span class="italic text-champagne-400">grandes momentos.</span>
+        </h2>
+        <p class="mt-6 max-w-xl text-marfil/70">
+          Catering, decoración, mobiliario y servicio de protocolo unidos en una sola
+          operación. Tú disfrutas; nosotros nos encargamos de que cada detalle cumpla.
+        </p>
+
+        <dl class="mt-10 grid grid-cols-2 gap-8 sm:grid-cols-3">
+          {
+            stats.map((stat) => (
+              <div>
+                <dt class="sr-only">{stat.label}</dt>
+                <dd>
+                  <span class="block font-serif text-4xl text-champagne-400 sm:text-5xl">
+                    {stat.value}
+                  </span>
+                  <span class="mt-2 block max-w-56 text-sm text-marfil/70">
+                    {stat.label}
+                  </span>
+                </dd>
+              </div>
+            ))
+          }
+        </dl>
+      </div>
+
+      <div class="md:col-span-2">
+        <div class="rounded-2xl bg-noche-950/70 p-7 ring-1 ring-white/5">
+          <p class="text-xs font-semibold uppercase tracking-[0.2em] text-marfil/50">
+            Bodas y eventos masivos
+          </p>
+          <p class="mt-4 text-sm leading-relaxed text-marfil/70">
+            Soluciones integrales de banquetería, ambientación y gastronomía para
+            celebraciones a gran escala y eventos corporativos.
+          </p>
+          <a
+            href="#contacto"
+            class="mt-7 inline-flex w-full items-center justify-center rounded-md bg-champagne-500 px-6 py-4 text-xs font-semibold uppercase tracking-[0.2em] text-noche-950 transition-colors hover:bg-champagne-400 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-champagne-400"
+          >
+            Agendar cotización
+          </a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
