@@ -1,6 +1,16 @@
 ---
 import Button from "../components/Button.astro";
 import heroUrl from "../assets/images/hero/a33a8204-7e26-48b3-b6b9-f9cb86ac8e05.jpeg?url";
+import { site, vendedores } from "../data/site";
+
+const vendedor = vendedores[0];
+
+const whatsappCotizacion = `https://wa.me/${vendedor.whatsapp.replace(
+  /\D/g,
+  "",
+)}?text=${encodeURIComponent(
+  `Hola ${vendedor.nombre}, quiero agendar una cotización para mi evento con ${site.name}.`,
+)}`;
 ---
 
 <section
@@ -33,7 +43,7 @@ import heroUrl from "../assets/images/hero/a33a8204-7e26-48b3-b6b9-f9cb86ac8e05.
   <div
     class="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row"
   >
-    <Button href="#contacto" variant="primary" class="w-72  md:h-16"
+    <Button href={whatsappCotizacion} target="_blank" variant="primary" class="w-72 md:h-16"
       >Agendar cotización</Button
     >
     <Button href="#servicios" variant="secondary" class="w-72 md:h-16"

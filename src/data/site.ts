@@ -23,10 +23,9 @@ export const vendedores: Vendedor[] = [
 export const navItems = [
   { label: "INICIO", href: "#inicio" },
   { label: "SERVICIOS", href: "#servicios" },
-  { label: "EVENTOS", href: "#eventos" },
   { label: "GALERÍA", href: "#galeria" },
-  { label: "NOSOTROS", href: "#nosotros" },
-  { label: "CONTACTO", href: "#contacto" },
+  // { label: "NOSOTROS", href: "#nosotros" },
+  // { label: "CONTACTO", href: "#contacto" },
 ];
 
 export function whatsappUrl(message: string): string {
